@@ -1,151 +1,195 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>CCAMLR Virtual Tour</title>
-<meta charset="utf-8">
-<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
-<style> @-ms-viewport { width: device-width; } </style>
-<link rel="stylesheet" href="vendor/reset.min.css">
-<link rel="stylesheet" href="style.css">
+  <title>CCAMLR 181 Macquarie St virtual tour</title>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="favicon.png" />
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,minimal-ui" />
+  <style>
+    @-ms-viewport {
+      width: device-width;
+    }
+    /* custom styles - copyright box*/
+    #copyright {
+      /* bottom-right */
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      /* on top of panorama */
+      z-index: 10000;
+      font-size: 0.8em;
+      opacity: 0.5;
+      padding: 10px;
+    }
+    /* make heading font larger, bold */
+    h1.sceneName {
+      font-weight: bold;
+      font-size: 18pt;
+    }
+    /* logo to left of heading */
+    h1.sceneName::before {
+      content: "CCAMLR 181 Macquarie St  ";
+      font-size: 0.5em;
+      opacity: 0.3;
+      vertical-align: middle;
+      font-weight: 200;
+    }
+    /* debug: make controls visible */
+    .viewControlButton {
+      /* display: block !important; */
+    }
+  </style>
+  <link rel="stylesheet" href="vendor/reset.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="multiple-scenes ">
 
-<div id="pano"></div>
+  <!-- copyright div, bottom-right corner -->
+  <div id="copyright">Virtual tour by Rob, May 2022</div>
+  <!-- panorama placeholder -->
+  <div id="pano"></div>
 
-<div id="sceneList">
-  <ul class="scenes">
-    
+  <div id="sceneList">
+    <ul class="scenes">
+      <!-- carpark -->
       <a href="javascript:void(0)" class="scene" data-id="0-2022-05-29_155930">
-        <li class="text">2022-05-29_15.59.30</li>
+        <li class="text">Front door (outside)</li>
       </a>
-    
       <a href="javascript:void(0)" class="scene" data-id="1-2022-05-29_160102">
-        <li class="text">2022-05-29_16.01.02</li>
+        <li class="text">Driveway (outside)</li>
       </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="2-2022-05-29_160235">
-        <li class="text">2022-05-29_16.02.35</li>
+      <!-- Conference room -->
+      <a href="javascript:void(0)" class="scene" data-id="4-2022-05-29_164959"
+        style="display:none !important;visibility:hidden !important">
+        <li class="text">Conference room center</li>
       </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="3-2022-05-29_161303">
-        <li class="text">2022-05-29_16.13.03</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="4-2022-05-29_164959">
-        <li class="text">2022-05-29_16.49.59</li>
-      </a>
-    
       <a href="javascript:void(0)" class="scene" data-id="5-2022-05-29_165133">
-        <li class="text">2022-05-29_16.51.33</li>
+        <li class="text">Conference room front</li>
       </a>
-    
       <a href="javascript:void(0)" class="scene" data-id="6-2022-05-29_165346">
-        <li class="text">2022-05-29_16.53.46</li>
+        <li class="text">Conference room rear</li>
       </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="7-2022-05-29_165508">
+      <!-- hidden Conference room floor-level views -->
+      <a href="javascript:void(0)" class="scene" data-id="7-2022-05-29_165508"
+        style="display:none !important;visibility:hidden !important">
         <li class="text">2022-05-29_16.55.08</li>
       </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="8-2022-05-29_165630">
+      <a href="javascript:void(0)" class="scene" data-id="8-2022-05-29_165630"
+        style="display:none !important;visibility:hidden !important">
         <li class="text">2022-05-29_16.56.30</li>
       </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="9-2022-05-29_165759">
+      <a href="javascript:void(0)" class="scene" data-id="9-2022-05-29_165759"
+        style="display:none !important;visibility:hidden !important">
         <li class="text">2022-05-29_16.57.59</li>
       </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="10-2022-05-29_165913">
+      <a href="javascript:void(0)" class="scene" data-id="10-2022-05-29_165913"
+        style="display:none !important;visibility:hidden !important">
         <li class="text">2022-05-29_16.59.13</li>
       </a>
-    
+      <!-- chapel -->
       <a href="javascript:void(0)" class="scene" data-id="11-2022-05-29_170133">
-        <li class="text">2022-05-29_17.01.33</li>
+        <li class="text">Chapel</li>
       </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="12-2022-05-29_170224">
+      <!-- hallways, hidden -->
+      <a href="javascript:void(0)" class="scene" data-id="12-2022-05-29_170224"
+        style="display:none !important;visibility:hidden !important">
         <li class="text">2022-05-29_17.02.24</li>
       </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="13-2022-05-29_170309">
+      <a href="javascript:void(0)" class="scene" data-id="13-2022-05-29_170309"
+        style="display:none !important;visibility:hidden !important">
         <li class="text">2022-05-29_17.03.09</li>
       </a>
-    
+      <!-- Reception -->
       <a href="javascript:void(0)" class="scene" data-id="14-2022-05-29_170427">
-        <li class="text">2022-05-29_17.04.27</li>
+        <li class="text">Reception</li>
       </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="15-2022-05-29_170509">
+      <!-- lift, hidden -->
+      <a href="javascript:void(0)" class="scene" data-id="15-2022-05-29_170509"
+        style="display:none !important;visibility:hidden !important">
         <li class="text">2022-05-29_17.05.09</li>
       </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="16-2022-05-29_170543">
+      <!-- outside Wombat room, hidden -->
+      <a href="javascript:void(0)" class="scene" data-id="16-2022-05-29_170543"
+        style="display:none !important;visibility:hidden !important">
         <li class="text">2022-05-29_17.05.43</li>
       </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="17-2022-05-29_170601">
+      <!-- outside Wombat room part 2, hidden -->
+      <a href="javascript:void(0)" class="scene" data-id="17-2022-05-29_170601"
+        style="display:none !important;visibility:hidden !important">
         <li class="text">2022-05-29_17.06.01</li>
       </a>
-    
+
       <a href="javascript:void(0)" class="scene" data-id="18-2022-05-29_170641">
-        <li class="text">2022-05-29_17.06.41</li>
+        <li class="text">Wombat room door</li>
       </a>
-    
+
       <a href="javascript:void(0)" class="scene" data-id="19-2022-05-29_170732">
-        <li class="text">2022-05-29_17.07.32</li>
+        <li class="text">Wombat room front</li>
       </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="20-2022-05-29_170817">
+      <!-- Wombat room floor, hidden -->
+      <a href="javascript:void(0)" class="scene" data-id="20-2022-05-29_170817"
+        style="display:none !important;visibility:hidden !important">
         <li class="text">2022-05-29_17.08.17</li>
       </a>
-    
-  </ul>
-</div>
+      <!-- alternate carpark scenes, hidden -->
+      <a href="javascript:void(0)" class="scene" data-id="2-2022-05-29_160235"
+        style="display:none !important;visibility:hidden !important">
+        <li class="text">Carpark (outside)</li>
+      </a>
+      <a href="javascript:void(0)" class="scene" data-id="3-2022-05-29_161303"
+        style="display:none !important;visibility:hidden !important">
+        <li class="text">Front fence (outside)</li>
+      </a>
 
-<div id="titleBar">
-  <h1 class="sceneName"></h1>
-</div>
+    </ul>
+  </div>
 
-<a href="javascript:void(0)" id="autorotateToggle">
-  <img class="icon off" src="img/play.png">
-  <img class="icon on" src="img/pause.png">
-</a>
+  <div id="titleBar">
+    <h1 class="sceneName"></h1>
+  </div>
 
-<a href="javascript:void(0)" id="fullscreenToggle">
-  <img class="icon off" src="img/fullscreen.png">
-  <img class="icon on" src="img/windowed.png">
-</a>
+  <a href="javascript:void(0)" id="autorotateToggle" title="Enable/disable slow pan around this scene">
+    <img class="icon off" src="img/play.png">
+    <img class="icon on" src="img/pause.png">
+  </a>
 
-<a href="javascript:void(0)" id="sceneListToggle">
-  <img class="icon off" src="img/expand.png">
-  <img class="icon on" src="img/collapse.png">
-</a>
+  <a href="javascript:void(0)" id="fullscreenToggle">
+    <img class="icon off" src="img/fullscreen.png">
+    <img class="icon on" src="img/windowed.png">
+  </a>
 
-<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1">
-  <img class="icon" src="img/up.png">
-</a>
-<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2">
-  <img class="icon" src="img/down.png">
-</a>
-<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3">
-  <img class="icon" src="img/left.png">
-</a>
-<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4">
-  <img class="icon" src="img/right.png">
-</a>
-<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5">
-  <img class="icon" src="img/plus.png">
-</a>
-<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6">
-  <img class="icon" src="img/minus.png">
-</a>
+  <a href="javascript:void(0)" id="sceneListToggle" title="Show/hide scenes">
+    <img class="icon off" src="img/expand.png">
+    <img class="icon on" src="img/collapse.png">
+  </a>
 
-<script src="vendor/screenfull.min.js" ></script>
-<script src="vendor/bowser.min.js" ></script>
-<script src="vendor/marzipano.js" ></script>
+  <a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1">
+    <img class="icon" src="img/up.png">
+  </a>
+  <a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2">
+    <img class="icon" src="img/down.png">
+  </a>
+  <a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3">
+    <img class="icon" src="img/left.png">
+  </a>
+  <a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4">
+    <img class="icon" src="img/right.png">
+  </a>
+  <a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5">
+    <img class="icon" src="img/plus.png">
+  </a>
+  <a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6">
+    <img class="icon" src="img/minus.png">
+  </a>
 
-<script src="data.js"></script>
-<script src="index.js"></script>
+  <script src="vendor/screenfull.min.js"></script>
+  <script src="vendor/bowser.min.js"></script>
+  <script src="vendor/marzipano.js"></script>
+
+  <script src="data.js"></script>
+  <script src="index.js"></script>
 
 </body>
 </html>
